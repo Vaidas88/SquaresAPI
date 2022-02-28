@@ -1,6 +1,6 @@
 ﻿namespace SquaresAPI.Dtos
 {
-    public class PointInsertDto
+    public record PointInsertDto
     {
         public int X { get; set; }
 

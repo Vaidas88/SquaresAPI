@@ -63,7 +63,14 @@ namespace SquaresAPI.Controllers
             var formCollection = await Request.ReadFormAsync();
             var file = formCollection.Files.First();
 
-            await this._pointService.Import(file);
+            //await this._pointService.Import(file);
+            var hashset = new HashSet<PointInsertDto>();
+
+            hashset.Add(new PointInsertDto() { X = 1, Y = 1 });
+            hashset.Add(new PointInsertDto() { X = 2, Y = 1 });
+            hashset.Add(new PointInsertDto() { X = 2, Y = 1 });
+            hashset.Add(new PointInsertDto() { X = 1, Y = 1 });
+            hashset.Add(new PointInsertDto() { X = 3, Y = 1 });
 
             return Ok();
         }
